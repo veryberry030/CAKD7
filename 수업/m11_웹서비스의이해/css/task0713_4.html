@@ -1,0 +1,43 @@
+<!--코드 7-5 "요소의 중앙 배치" 문자를 컨테이너 중앙에 위치하도록 수정하세요.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Asolute position</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+
+        body{
+            background: rgb(157, 150, 244);
+        }
+
+        #container{
+            width: 500px; height: 250px;
+            background: rgb(240, 247, 163);
+
+            position: absolute;
+            left: 50%; top: 50%;
+
+            margin-left: -250px;
+            margin-top: -125px;
+        }
+
+        h1{
+            width: 500px; height: 250px;
+
+            position: absolute;
+            left: 50%; top: 50%;
+
+            margin-left: -125px;
+            margin-top: -31.25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>요소의 중앙 배치</h1>
+    </div>
+</body>
+</html>

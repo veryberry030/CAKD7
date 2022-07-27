@@ -1,0 +1,65 @@
+<!--반응형 웹패턴 4가지 경우를 구현하세요-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1">
+    <title>pattern</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #menu{
+            width: 260px;
+            /*float: left;*/
+            float: right;
+        }
+
+        #section{
+            width: 700px;
+            float: right;
+        }
+
+        li{ list-style: none;}
+
+        @media screen and (max-width: 767px){
+            body{width: auto;}
+            #menu{width: auto; float: none;}
+            #section{ width: auto; float: none;}
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>메뉴A</li>
+            <li>메뉴B</li>
+            <li>메뉴C</li>
+        </ul>
+    </div>
+    <div id="section">
+        <h1>우리들이 몰랐던 신비로운 꽃 이야기</h1>
+        <p>'꽃말의 탄생: 서양 문화로 읽는 매혹적인 꽃 이야기'는
+            우리에게 익숙한 약 50여 종의 꽃들이 오랜 세월 동안 어떻게 그런 꽃말을 지니게 되었는지
+            그 유래를 찾아서 신화, 문학, 역사, 미신 등 서양 문화를 통해 소개한 책입니다.
+            영국 요크셔에서 작은 농장을 운영하며 자연, 공예, 야외 생활 등에 관한
+            베스트셀러 작가로 활동하고 있는 샐리 쿨타드의 작품으로,
+            아름다운 꽃 일러스트가 함께 수놓아진 책장을 넘기다 보면
+            마음에 봄날이 피어나는 기분을 느낄 수 있을 것입니다.우리는 누군가에게 마음을 표현하거나 선물을 줄 때 꽃을 사곤 합니다.
+            꽃 자체의 아름다움 때문이기도 하지만, 꽃에 담긴 의미 때문이기도 합니다.
+            꽃집에서 5월이 되면 카네이션을, 졸업 시즌이 되면 프리지아를 가장 많이 마주치는 이유가 바로 여기에 있습니다.
+            이렇듯 알게 모르게 일상에서 마주하는 꽃말은 매우 오래전부터 존재했습니다.
+            꽃말은 역사적인 사건을 통해 생기기도 하고,
+            민간요법으로 꽃이 약초로 쓰이면서 의미가 파생되기도 했습니다</p>
+    </div>
+</body>
+</html>

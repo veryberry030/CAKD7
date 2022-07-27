@@ -1,0 +1,95 @@
+<!--배경 속성을 다양하게 적용하여 독창적인 웹페이지를 생성하세요-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-image: url('../0712_img.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #logo{
+        float: left;
+        margin-left: 20px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 20px;
+      }
+
+      #wrap {
+        text-align: center;
+        color: white;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #wrap:hover{
+        background-color: rgba(255, 255, 255, 0.1);
+        color: black;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      #wrap h1 {
+        font-size: 70px;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+
+      #wrap p {
+        font-family: 'Dancing Script', cursive;
+        font-size: 30px;
+      }
+
+      #wrap a {
+        display: inline-block;
+        border: 2px solid white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-weight: bold;
+        transition: all 0.5s;
+      }
+
+      #wrap a:hover {
+        background-color: greenyellow;
+      }
+
+      @media (max-width: 769px) {
+        #wrap h1 {
+          font-size: 50px;
+        }
+
+        #wrap p {
+          font-size: 18px;
+        }
+
+        #wrap a {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logo">
+      <h3>YOGA</h3>
+    </div>
+    <div id="wrap">
+      <h1>"Yoga == Life"</h1>
+      <p>KEEP CALM AND DO YOGA </p>
+      <a href="C:\cakd7\web_programming\css\task_0712_6_2.html">Get Started</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!--유동 속성, 그림자(글자,박스,중첩), 그라디언트 속성의 사례를 만들어서그 효과를 설명하세요.-->
+<!--레퍼런스 : 그라디언트예시-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GRADIENT</title>
+    <style>
+
+        body{
+            background-repeat: no-repeat;
+            background-color: rgb(189, 193, 188);
+        }
+
+        .first{
+            overflow: hidden;
+            z-index: 1;
+
+            border-top: 10px solid white;
+            position: absolute;
+            left: 20%; top: 30%;
+            box-shadow: 2px 2px 10px black;
+
+            width: 600px; height: 400px;
+
+            margin-top: -200px;
+            margin-left: -300px;
+
+            background: rgb(176,171,255);
+            background: linear-gradient(7deg, rgba(176,171,255,1) 0%, rgba(9,121,114,0.5858718487394958) 30%, rgba(186,182,47,0.4206057422969187) 72%, rgba(194,230,2,1) 100%, rgba(0,212,255,1) 100%);
+        }
+
+        .first h1{
+            color: white;
+            font-size: 100px;
+
+            position: absolute;
+            left: 30%; top: 40%;
+
+            width: 600px; height: 400px;
+
+            margin-top: -20px;
+            margin-left: 10px;
+        }
+
+        .Second{
+            overflow: hidden;
+            z-index: 10;
+
+            border-top: 10px solid white;
+            position: absolute;
+            left: 40%; top: 40%;
+            box-shadow: 2px 2px 10px black;
+
+            width: 600px; height: 400px;
+
+            margin-top: -200px;
+            margin-left: -300px;
+
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+
+        .Second h1{
+            color: white;
+            font-size: 100px;
+
+            position: absolute;
+            left: 40%; top: 40%;
+
+            width: 600px; height: 400px;
+
+            margin-top: -115px;
+            margin-left: -432px;
+        }
+
+        .Third{
+            overflow: hidden;
+            z-index: 5;
+
+            border-top: 10px solid white;
+            position: absolute;
+            left: 25%; top: 60%;
+            box-shadow: 2px 2px 10px black;
+
+            width: 600px; height: 400px;
+
+            margin-top: -200px;
+            margin-left: -300px;
+
+            background: rgb(131,58,180);
+            background: linear-gradient(0deg, rgba(131,58,180,1) 0%, rgba(160,153,174,1) 0%, rgba(237,234,171,1) 0%, rgba(215,124,129,0.8435749299719888) 0%, rgba(255,255,255,1) 7%, rgba(255,255,255,1) 11%, rgba(254,251,252,1) 15%, rgba(251,164,170,1) 40%, rgba(249,91,101,1) 61%, rgba(246,0,15,1) 87%, rgba(232,0,14,1) 100%, rgba(255,0,16,0.32816876750700286) 100%, rgba(242,2,19,1) 100%);
+        }
+
+        .Third h1{
+            color: white;
+            font-size: 100px;
+
+            position: absolute;
+            left: 25%; top: 60%;
+
+            width: 600px; height: 400px;
+
+            margin-top: -255px;
+            margin-left: -55px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="first">
+        <h1>GRADIENT</h1>
+    </div>
+    <div class="Second">
+        <h1>GRADIENT MESH.</h1>
+    </div>
+    <div class="Third">
+        <h1>MESH</h1>
+    </div>
+</body>
+</html>

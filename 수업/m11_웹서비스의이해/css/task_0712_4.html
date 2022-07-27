@@ -1,0 +1,39 @@
+<!-- 후손 선택자와 자손 선택자를 생성하여 스타일을 적용하여 구현하고 그 차이를 확인하세요.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>succesor</title>
+    <style>
+      /* 후손 선택자*/
+
+      .div1 h3 {
+        background-color: aquamarine;
+      }
+
+      /* 자손 선택자*/
+      .div1 > .div2 > h3 {
+        background-color: burlywood;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="div1">
+      <h3>오늘의 할 일</h3>
+      <div>
+        <ol>
+          <li>장보기</li>
+          <li>요리하기</li>
+          <li>밥먹기</li>
+          <li>운동하기</li>
+        </ol>
+      </div>
+
+      <div class="div2">
+        <h3>다이어리</h3>
+        <input type="text" size="50px" placeholder="당신의 하루를 기록하세요" />
+        <input type="submit" size="30px" />
+      </div>
+    </div>
+  </body>
+</html>
