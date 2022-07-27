@@ -1,0 +1,64 @@
+<!--bootstrap modal code를 이용하여 의미있는 버튼과 메시지를 정의하고 customized하여 출력하세요-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>modal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+        })
+    </script>  
+    <style>
+      .modal{
+        position: fixed;
+      }
+    </style>
+
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>   
+
+    <div class="container">
+      <img src="./Katie Holmes Wore the Denim Micro-Trend That Deserves Attention.jpeg" class="rounded mx-auto d-block" alt="..." height="500px">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+          신상품) 바지
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">그레이</a>
+        <a href="#" class="list-group-item list-group-item-action">네이비</a>
+        <a href="#" class="list-group-item list-group-item-action">블랙</a>
+        <a class="list-group-item list-group-item-action disabled">아이보리</a>
+      </div>
+      <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      주문하기
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">회원이 아닙니다</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            회원만 이용 가능합니다.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Join</button>
+            <button type="button" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
