@@ -1,0 +1,64 @@
+<!--name 속성으로 여러 문서객체를 선택하는 사례를 작성하세요.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>0715_1</title>
+    <script>
+      function accessName() {
+        // document.getElementsByName("name속성값");
+        // => 선택된 요소 객체들이 배열에 담겨서 반환
+        var mbti = document.getElementsByName("mbti");
+
+        console.log(mbti);
+
+        // 체크된 요소만 div에 찍어보기
+        // 빈 요소객체 생성
+        var checkedItem = "";
+
+        for (var i = 0; i < mbti.length; i++) {
+          if (mbti[i].checked == true) {
+            checkedItem += mbti[i].value;
+          }
+        }
+
+        document.getElementById("area3").innerHTML = checkedItem;
+      }
+    </script>
+  </head>
+  <body>
+    <form action="test.do" method="get">
+      <fieldset>  <!-- <form> 요소에서 연관된 요소들을 하나의 그룹으로 묶을 때 사용. 그룹으로 묶은 요소들 주변으로 박스 모양의 선을 그려줌 -->
+        <legend>MBTI</legend> <!-- <legend>를 사용하면 <filedset> 요소의 캡션을 정의할 수 있음 -->
+
+        <legend>에너지 방향</legend>
+        <input type="checkbox" name="mbti" value="I" id="I" />
+        <label for="I">I(내향)</label>
+        <input type="checkbox" name="mbti" value="E" id="E" />
+        <label for="E">E(외향)</label>
+
+        <legend>인식 기능</legend>
+        <input type="checkbox" name="mbti" value="S" id="S" />
+        <label for="S">S(감각)</label>
+        <input type="checkbox" name="mbti" value="N" id="N" />
+        <label for="N">N(직관)</label>
+
+        <legend>판단 기능</legend>
+        <input type="checkbox" name="mbti" value="T" id="T" />
+        <label for="T">T(사고)</label>
+        <input type="checkbox" name="mbti" value="F" id="F" />
+        <label for="F">F(감정)</label>
+
+        <legend>생활 양식</legend>
+        <input type="checkbox" name="mbti" value="J" id="J" />
+        <label for="J">J(판단)</label>
+        <input type="checkbox" name="mbti" value="P" id="P" />
+        <label for="P">P(인식)</label>
+      </fieldset>
+    </form>
+
+    <br />
+
+    <div id="area3" class="area"></div>
+    <button onclick="accessName();">name으로 접근</button>
+  </body>
+</html>

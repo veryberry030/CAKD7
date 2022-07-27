@@ -1,0 +1,32 @@
+<!--class 속성으로 여러 문서객체를 선택하는 사례를 작성하세요.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script>
+      function accessClass() {
+        // => 선택된 여러개의 요소들이 배열에 담겨서 반환
+        var arr = document.getElementsByClassName("test");
+        console.log(arr);
+
+        for (var i in arr) {
+          console.log(arr[i]);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="test"></div>
+
+    <p class="test">602</p>
+
+    <h2 class="test">this is h2</h2>
+
+    <ul class="test">
+      <li>abc</li>
+      <li>def</li>
+    </ul>
+
+    <button onclick="accessClass();">클래스로 접근</button>
+  </body>
+</html>

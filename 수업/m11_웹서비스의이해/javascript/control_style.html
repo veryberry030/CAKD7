@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dom basic</title>
+    <script>
+        window.onload =function() {
+
+            var output = '';
+
+            for (var i = 0; i<256; i++) {
+                output += '<div></div>';
+            }   
+
+            document.body.innerHTML = output;
+
+            var divs = document.querySelectorAll('div');
+            for(var i=0;i<divs.length;i++){
+                var div = divs[i];
+                div.style.height = '3px';
+                div.style.background = 'rgb('+(50+i)+','+i+','+(50+i)+')';
+            }
+            
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
+

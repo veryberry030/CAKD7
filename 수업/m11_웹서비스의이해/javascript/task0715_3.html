@@ -1,0 +1,50 @@
+<!-- 여러분들이 가지고 싶은 멋있는 디지털 시계를 만들어보세요-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>clock</title>
+    <style>
+      #date,
+      #time {
+        border: solid 1px white;
+        color: rgb(211, 181, 239);
+        background-color: #f5f5dc;
+        width: 400px;
+        text-align: center;
+        font-size: 50px;
+      }
+    </style>
+    <script>
+      // 문서 객체를 선택합니다.
+      function setClock() {
+        var dateInfo = new Date();
+
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+
+        document.getElementById("date").innerHTML =
+          year + "년 " + month + "월 " + date + "일";
+        document.getElementById("time").innerHTML =
+          hour + ":" + min + ":" + sec;
+      }
+      function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+          return "0" + time;
+        } else return time;
+      }
+      window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+      };
+    </script>
+  </head>
+  <body>
+    <div id="date" class="date"></div>
+    <div id="time" class="time"></div>
+  </body>
+</html>
