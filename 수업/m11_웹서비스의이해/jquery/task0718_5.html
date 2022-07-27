@@ -1,0 +1,37 @@
+<!--(p.396)태그가 사라졌다가 나타나는 효과의 사례를 생각하여 작성 후 그 결과를 출력하세요.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src = 'https://code.jquery.com/jquery-3.4.1.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('.page').fadeToggle('slow')
+            })
+        })
+    </script>
+    <style>
+        h1{
+            padding-top: 10px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>쇼핑몰 홈페이지</h1>
+    <button>상품 정렬</button>
+    <div class="page">
+        <ul>
+            <li>인기순</li>
+            <li>신상순</li>
+            <li>할인중</li>
+            <li>최다리뷰순</li>
+        </ul>
+    </div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYVgGqhJU64PCALDYkG7j5v2svRs_vIIqJWA&usqp=CAU">
+</body>
+</html>

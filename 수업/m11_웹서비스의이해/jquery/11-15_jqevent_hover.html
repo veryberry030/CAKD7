@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>basic</title>
+    <script src = 'https://code.jquery.com/jquery-3.4.1.js'></script>
+
+    <script>
+        $(document).ready(function(){
+            $('h1').hover(function(){
+                $(this).css({
+                    backgroud : 'red',
+                    color : 'white'
+                });
+            },function(){
+                $(this).css({
+                    backgroud : '',
+                    color : ''
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>click</h1>
+</body>
+</html>

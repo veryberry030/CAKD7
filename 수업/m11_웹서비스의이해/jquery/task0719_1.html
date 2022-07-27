@@ -1,0 +1,58 @@
+<!-- 문서 객체 추가하기 8개 사례를 작성하여 출력하세요.(p.419)-->
+<!--(객체)prependTo(대상),appendTo,insertBefore,insertAfter / (대상)prepend(객체),append,before,after-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src = 'https://code.jquery.com/jquery-3.4.1.js'></script>
+
+    <script>
+        $(document).ready(function(){
+        $('#btn1').click(function() {	
+            $('#text').append('<span>appendText</span>')});
+
+        $('#btn2').click(function() {	
+            $('<span>appendToText</span>').appendTo('#text')});
+
+        $('#btn3').click(function() {	
+            $('#text').prepend('<span>prependText</span>')});
+
+        $('#btn4').click(function() {	
+            $('<span>prependToText</span>').prependTo('#text')});
+        
+        $('#btn5').click(function() {	
+            $('#text').before('<span>beforeText</span>')});
+
+        $('#btn6').click(function() {	
+            $('<span>insertBefore</span>').insertBefore('#text')});
+
+        $('#btn7').click(function() {	
+            $('#text').after('<span>afterText</span>')});
+
+        $('#btn8').click(function() {	
+            $('<span>insertAfter</span>').insertAfter('#text')});
+        });
+
+    </script>
+
+    <style>
+        p {
+            font-size: 30px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">append</button>
+    <button id="btn2">appendTo</button>
+    <button id="btn3">prepend</button>
+    <button id="btn4">prependTo</button>
+    <button id="btn5">before</button>
+    <button id="btn6">insertBefore</button>
+    <button id="btn7">after</button>
+    <button id="btn8">insertAfter</button>
+
+    <p id="text">TEXT</p>
+</body>
+</html>

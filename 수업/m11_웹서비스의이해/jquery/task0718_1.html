@@ -1,0 +1,21 @@
+<!--함수를 이용해 속성을 지정하는 사례를 작성해서 출력하세요.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src = 'https://code.jquery.com/jquery-3.4.1.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('img').attr({
+                width: function(index){
+                    var size = (index+1)*100;
+                    return size;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

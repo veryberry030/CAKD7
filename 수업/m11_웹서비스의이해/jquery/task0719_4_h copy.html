@@ -1,0 +1,224 @@
+<!-- 자바스크립트를 적용하여 종합문제를 완성하세요.(p.443)-->
+<!-- 종합예제2에 css를 추가하여 웹의 완성도를 제고하세요(응용대환영) -->
+<!--레퍼런스 : 뉴닉-->
+<!--
+1.헤더(로고,그림,'우리가 시간이 없지, 세상이 안 궁금하냐!'), 
+등록 - 유효성 검사(✨지금 479,023명이 뉴닉을 읽고 있어요.
+
+2.이메일 주소, 닉네임 입력/ 구독 입력 폼
+
+3. 네비게이션바(전체⚖️정치💰경제🌐세계🤖테크💪노동💡뉴노멀🎞문화🧘라이프)
+
+4. 본문 (데스크탑:column 3개 그리드, 폰:1개) 아이콘-제목-본문 처음...-날짜-카테고리
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0,maximum-scale=1.0">
+    
+    <title>Newsletter NEWNEEK</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src = 'https://code.jquery.com/jquery-3.4.1.js'></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js" ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./task0719_4_style_h.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script>
+        $(document).ready(function(){
+            $('#registerForm').validate({
+                rules: {              
+                    txtID: {required:true},
+                    txtEmail: {required:true},  
+                    ck1: {required:true},
+                    ck2: {required:true}
+                    },
+                messages: {
+                    txtID: {required:"이름을 입력하세요."},
+                    txtEmail: {required:"이메일을 입력하세요."},
+                    ck1: {required:"약관에 동의해주세요"},
+                    ck2: {required:"약관에 동의해주세요"}
+                    }
+                    ,
+                submitHandler: function (frm){
+                    frm.submit();   //유효성 검사를 통과시 전송
+                },
+                success: function(e){
+                }
+            });
+        }); //end ready 
+    </script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>   
+
+    <header>
+        <div class="header_wrap">
+        <div class="logo">
+            <h1>NEWNEEK</h1>
+            <span class="outer-menu">
+                    <span class="inner-menu1">
+                        <li><a href="#">
+                            <span class="material-icons">
+                                search <!--구글 아이콘 불러오기-->
+                            </span>
+                            </a>
+                        </li>
+                    </span>
+                    <span class="inner-menu2">
+                        <li><a href="#">
+                            <span class="material-icons">
+                                account_circle
+                            </span>
+                            </a>
+                        </li>
+                    </span>
+            </span>
+        </div>
+            <!--<hr>-->
+            <h1 id="text_logo">우리가 시간이 없지, 세상이 안 궁금하냐!</h1>
+    </div>
+        
+
+    <hr>
+        <div class="intro">
+            <div class="intro_a">
+                <p>✨지금 479,023명이 뉴닉을 읽고 있어요.
+                <br><br>
+                세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요!
+                <br>
+                월/화/수/목/금 아침마다 세상 돌아가는 소식을 메일로 받아보세요.</p>
+                <form id="registerForm" method="get" action="./signup.jsp">
+                    <input class="form-control form-control-lg" type="text" id="txtEmail" name="txtEmail" placeholder="이메일 주소" autocomplete="off"><br>
+                    <input class="form-control form-control-lg" type="text" id="txtID" name="txtID"   placeholder="닉네임" autocomplete="off"><br>
+                    <input type="checkbox" class="required" name="ck1"> 개인정보 수집·이용에 동의합니다<br>
+                    <input type="checkbox" class="required" name="ck2"> 광고성 정보 수신에 동의합니다<br>
+                    <input type="submit" id="submit" value="뉴스레터 무료로 구독하기" />
+                </form>
+            </div>
+            <div class="intro_b">
+                <img src="C:\cakd7\web_programming\css\고슴이.png" width="500px" height="500px">
+            </div>
+        </div>
+    </header> 
+
+    <nav>
+        <ul>
+            <li><a href="#">전체</a></li>
+            <li><a href="https://newneek.co/tag/politics">⚖️정치</a></li>
+            <li><a href="https://newneek.co/tag/economy">💰경제</a></li>
+            <li><a href="https://newneek.co/tag/world">🌐세계</a></li>
+            <li><a href="https://newneek.co/tag/tech">🤖테크</a></li>
+            <li><a href="https://newneek.co/tag/labor">💪노동</a></li>
+            <li><a href="https://newneek.co/tag/new-normal">💡뉴노멀</a></li>
+            <li><a href="https://newneek.co/tag/culture">🎞문화</a></li>
+            <li><a href="https://newneek.co/tag/life">🧘라이프</a></li>                    
+        </ul>
+    </nav>
+      
+    <div class="main-section">
+        <div class="container">    
+            <div class="box">
+                <h1>🧘</h1>
+                <h3><a href="https://newneek.co/post/AqaIW7">택시 대란 이유와 대책</a></h3>
+                <p>택시 진짜 안 잡히더라... 왜 그런 거래?
+                    주로 밤에 택시 잡기 어렵다는 말이 나오는데요...</p>
+                <br><br><br><br><br>
+                <p>2022/07/13              라이프</p>
+            </div>    
+            <div class="box">
+                <h1>🌐</h1>
+                <h3><a href="https://newneek.co/post/HlxR1Z">우크라이나 대상 러시아 시민권 취득 간소화</a></a></h3>
+                <p>그제(11일), 푸틴 대통령이 우크라이나 국민이 러시아 시민권을 간단히 신청할...</p>
+                <br><br><br><br><br>
+                <p>2022/07/13              세계</p>
+            </div>    
+            <div class="box">
+                <h1>🌐</h1>
+                <h3><a href="https://newneek.co/post/IrVPBG">러시아, 유럽에 가스 공급 일시 중단</a></h3>
+                <p>러시아가 유럽으로 이어지는 천연가스관을 잠갔어..</p>
+                <br><br><br><br><br>
+                <p>2022/07/13              세계</p>
+            </div>    
+            <div class="box">
+                <h1>🌐</h1>
+                <h3><a href="https://newneek.co/post/IrVPBG">러시아, 유럽에 가스 공급 일시 중단</a></h3>
+                <p>러시아가 유럽으로 이어지는 천연가스관을 잠갔어요...</p>
+                <br><br><br><br><br>
+                <p>2022/07/13              세계</p>
+            </div>    
+            <div class="box">
+                <h1>🌐</h1>
+                <h3>🔔 띵동! '그린워싱' 피자가 도착했습니다</h3>
+                <p>“뉴니커, 어떻게 생각해?”
+                    뉴니커의 생각을 모아 나눠 먹는 공간,
+                    피자스테이션에 오신 것을 환영합니다! 🍕</p>
+                <br><br><br><br>
+                <p>2022/07/13                세계</p>
+            </div>    
+            <div class="box">
+                <h1>🤖</h1>
+                <h3>(광고) AWS Builders 온라인 시리즈</h3>
+                <p>클라우드?! 사진 저장하는 그거 맞지?
+                    부족할 때 사진·영상뿐 아니라 각종 파일을 인터넷 서버에 저장해 두고 필요할 때 . ...</p>
+                <br><br><br><br>
+                <p>2022/07/13              테크</p>
+            </div>
+            <div class="box g">
+                <h1>🤖</h1>
+                <h3>(광고) AWS Builders 온라인 시리즈</h3>
+                <p>클라우드?! 사진 저장하는 그거 맞지?
+                    부족할 때각종 파일을 인터넷 서버에 저장해 두고 필요할 때. ...</p>
+                <br><br><br><br>
+                <p>2022/07/13              테크</p>
+            </div>    
+            <div class="box h">
+                <h1>🤖</h1>
+                <h3>(광고) AWS Builders 온라인 시리즈</h3>
+                <p>클라우드?! 사진 저장하는 그거 맞지?
+                    부족할 때 인터넷 서버에 저장해 두고 필요할 때 꺼내 쓰는 게...</p>
+                <br><br><br><br>
+                <p>2022/07/13              테크</p>
+            </div>    
+            <div class="box i">
+                <h1>🤖</h1>
+                <h3>(광고) AWS Builders 온라인 시리즈</h3>
+                <p>클라우드?! 사진 저장하는 그거 맞지?
+                    부족할 때  파일을 인터넷 서버에 저장해 두고 필요할 때 꺼내 쓰는...</p>
+                <br><br><br><br>
+                <p>2022/07/13              테크</p>
+            </div>  
+            <div class="box g">
+                <h1>🤖</h1>
+                <h3>(광고) AWS Builders 온라인 시리즈</h3>
+                <p>클라우드?! 사진 저장하는 그거 맞지?
+                    사진·영상뿐 아니라 각종 파일을 인터넷 서버에 저장해 두고 필요할 때 꺼...</p>
+                <br><br><br><br>
+                <p>2022/07/13              테크</p>
+            </div>    
+            <div class="box h">
+                <h1>🤖</h1>
+                <h3>(광고) AWS Builders 온라인 시리즈</h3>
+                <p>클라우드?! 사진 저장하는 그거 맞지?
+                    맞아요. 우리가 PC나 스마트폰 용량이 부족할 때 사진·영상뿐 아니라 각종 파일을 인터넷 서버에 저장해 두고 필요할 때 꺼내...</p>
+                <br><br><br><br>
+                <p>2022/07/13              테크</p>
+            </div>    
+            <div class="box i">
+                <h1>🤖</h1>
+                <h3>(광고) AWS Builders 온라인 시리즈</h3>
+                <p>클라우드?! 사진 저장하는 그거 맞지?
+                    맞아요. 우리가 PC나 스마트폰 용량이 부족할 때 사진·영상뿐 아니라 각종 파일을 인터넷 서버에 저장해 두고 필요할 때 꺼내 쓰는 게 바로 클라우드 서비. ...</p>
+                <br><br><br><br>
+                <p>2022/07/13              테크</p>
+            </div>  
+          </div>
+    </div>
+</body>
+</html>
