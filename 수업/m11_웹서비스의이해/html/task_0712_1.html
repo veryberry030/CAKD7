@@ -1,0 +1,118 @@
+<!-- 교재 종합 예제 1(p.117)을 기반으로 html 종합문제를 수행하세요(응용 대환영)-->
+<!-- 깃허브 첫화면-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+
+    <style>
+        * {
+            background-color: gainsboro;
+            color: black;
+            text-decoration: none;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            float: left;
+        }
+
+        #main-navigation{
+            display: inline-block;
+            background-color: black;
+            color: white;            
+            padding-top: 20px;
+            padding-bottom: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        li a{
+            background-color: black;
+            color: white;            
+            padding: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+        }
+        li:nth-child(2){
+            padding: 0px 20px;
+            border-color: white;
+        }
+        li:nth-child(7){
+            padding-left: 1200px;
+        }
+        #main-section > .p1{
+            column-count: 3;
+        }
+
+        #content .p1_t1 {
+            display: inline-block;
+            background-color: white;
+        }
+
+        
+    </style>
+ </head>
+ <body>
+    <!--전체를 감싸는 태그-->
+    <div id="page-wrapper">
+        <!-- 네비게이션 -->
+        <nav id="main-navigation">
+            <div class="pull_up">
+                    <ul>
+                        <li class="left_item"><img src="C:\cakd7\web_programming\html\Github_icon.png" alt=" " width="30px" height="30px" ></li>
+                        <li class="left_item"><input type="search" placeholder="Search or jump to.." style="border-color: white; background-color: transparent;"></li>
+                        <li class="left_item"><a href="#">Pulls</a></li>
+                        <li class="left_item"><a href="#">Issues</a></li>
+                        <li class="left_item"><a href="#">Marketplace</a></li>
+                        <li class="left_item"><a href="#">Explore</a></li>
+                        <li class="right_item"><img src="C:\cakd7\web_programming\html\icon_bell.JPG" alt=" " width="30px" height="30px" ></li>
+                        <li class="right_item"><a href="#"> + </a></li>
+                        <li class="right_item"><a href="#">User </a></li>
+                    </ul>
+            </div>
+        </nav>
+        <!--헤더-->
+        <header id="main-header">
+            <hgroup>
+                <h1>The home for all developers — including you.</h1>
+                <p>Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.</p>
+            </hgroup>
+        </header>
+
+        <!--본문-->
+        <div id="content">
+            <!-- 본문 좌측 영역 -->
+            <aside id="main-aside"></aside>
+            <!-- 본문 우측 영역 -->
+            <section id="main-section"></section>
+                <div class="p1">
+                    <h4> Start writing code</h4>
+                    <p>Collaborate on code with others and track your work in a repository.</p>
+                    <div class="p1_t1">
+                        <h4>Start a new repository</h4>
+                        <p>Collaborate on code with others and track your work in a repository.</p>
+                        <button>Create a new repository</button>
+
+                        <h4>Create your profile README</h4>
+                        <p>Create a file in a repository that tells the GitHub community who you are.</p>
+                        <button>Create a README</button>
+
+                        <h4>Contribute to an existing repository</h4>
+                        <a href="#">Find repos that need your help</a>
+                    </div>
+            </div>
+        </div>
+        <!--푸터-->
+        <footer id="main-footer"></footer>
+    </div>
+ </body>
+ </html>
