@@ -75,7 +75,74 @@ SELECT LAST_NAME, TRUNC((SYSDATE-HIRE_DATE)/365,0) 근속년수
 FROM EMPLOYEES;
 
 --과제_1005_1. EMPLOYEES 테이블에서 채용일에 6개월을 추가한 날짜를 LAST_NAME과 같이 출력
+SELECT LAST_NAME,HIRE_DATE, ADD_MONTHS(HIRE_DATE,6) FROM EMPLOYEES;
+
 --과제_1005_2. 이번달의 말일을 반환하는 함수를 사용하여 말일을 출력
+SELECT LAST_NAME,HIRE_DATE, LAST_DAY(HIRE_DATE) FROM EMPLOYEES;
+
 --과제_1005_3. EMPLOYEES 테이블에서 채용일과 현재시점간의 근속월수를 출력
+SELECT LAST_NAME,TRUNC((MONTHS_BETWEEN(SYSDATE,HIRE_DATE)),0) 근속월수 FROM EMPLOYEES;
+
 --과제_1005_4. 입사일 6개월 후 첫번째 월요일을 LAST_NAME별로 출력
+SELECT LAST_NAME,NEXT_DAY(ADD_MONTHS(HIRE_DATE,6),'월') FROM EMPLOYEES;
+
 --과제_1005_5. JOB_ID별로 연봉합계 연봉평균 최고연봉 최저연봉 출력, 단 평균연봉이 5000 이상인 경우만 포함하여 내림차순으로 정렬
+SELECT JOB_ID, SUM(SALARY) 연봉합계, AVG(SALARY) 연봉평균, MAX(SALARY) 최고연봉, MIN(SALARY) 최저연봉
+FROM EMPLOYEES
+GROUP BY JOB_ID
+HAVING AVG(SALARY)>=5000
+ORDER BY JOB_ID DESC;
+
+--과제_1005_6. 사원번호(EMPLOYEE_ID)가 110인 사원의 부서명을 출력
+SELECT DEPARTMENT_NAME
+FROM EMPLOYEES,DEPARTMENTS
+WHERE employees.department_id = departments.department_id(+)
+AND employees.employee_id=110;
+
+--과제_1005_7. 사번이 120번인 직원의 사번, 이름, 업무(JOB_ID), 업무명(JOB_TITLE)을 출력
+SELECT EMPLOYEES.EMPLOYEE_ID 사번, EMPLOYEES.LAST_NAME 이름, EMPLOYEES.JOB_ID 업무, JOBS.JOB_TITLE 업무명
+FROM EMPLOYEES,JOBS
+WHERE EMPLOYEES.JOB_ID = JOBS.JOB_ID(+)
+AND EMPLOYEES.employee_id=120;
+
+--과제_1005_8. 사번, 이름, 직급을 출력하세요. 단, 직급은 아래 기준에 의함
+                --salary > 20000 then '대표이사'
+                --salary > 15000 then '이사' 
+                --salary > 10000 then '부장' 
+                --salary > 5000 then '과장' 
+                --salary > 3000 then '대리'
+                --나머지 '사원'
+                
+SELECT EMPLOYEE_ID 사번, LAST_NAME 이름, 
+        CASE 
+            WHEN salary > 20000 then '대표이사'
+            WHEN salary > 15000 then '이사'
+            WHEN salary > 10000 then '부장'
+            WHEN salary > 5000 then '과장'
+            WHEN salary > 3000 then '대리'
+            ELSE '사원' 
+        END 직급
+FROM EMPLOYEES;
+
+--과제_1005_9. EMPLOYEES 테이블에서 EMPLOYEE_ID 와 SALARY만 추출해서 EMPLOYEE_SALARY 테이블을 생성하여 출력
+CREATE TABLE EMPLOYEE_SALARY AS SELECT EMPLOYEE_ID, SALARY FROM EMPLOYEES;
+
+SELECT * FROM EMPLOYEE_SALARY;
+
+--과제_1005_10. EMPLOYEE_SALARY 테이블의 FIRST_NAME, LAST_NAME 컬럼을 추가한 후 NAME으로 변경하여 출력
+ALTER TABLE EMPLOYEE_SALARY ADD FIRST_NAME VARCHAR2(40);
+
+ALTER TABLE EMPLOYEE_SALARY ADD LAST_NAME VARCHAR2(40);
+
+SELECT * FROM EMPLOYEE_SALARY;
+
+--과제_1005_11. EMPLOYEE_SALARY 테이블의 EMPLOYEE_ID에 기본키를 적용하고 CONSTRAINT_NAME을 ES_PK로 지정 후 출력
+ALTER TABLE EMPLOYEE_SALARY 
+ADD CONSTRAINT ES_PK
+PRIMARY KEY (EMPLOYEE_ID);
+
+DESC EMPLOYEE_SALARY;
+
+--과제_1005_12. EMPLOYEE_SALARY 테이블의 EMPLOYEE_ID에서 CONSTRAINT_NAME을 삭제 후 삭제 여부를 확인
+ALTER TABLE EMPLOYEE_SALARY
+DROP CONSTRAINT ES_PK;
