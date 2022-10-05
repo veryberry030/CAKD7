@@ -1,0 +1,81 @@
+SELECT * FROM countries;
+SELECT * FROM departments;
+SELECT * FROM employees;
+SELECT * FROM job_history;
+SELECT * FROM JOBS;
+SELECT * FROM LOCATIONS;
+SELECT * FROM REGIONS;
+
+--새로운 컬럼 만들어주기
+SELECT LAST_NAME, 'is a' job_id FROM EMPLOYEES;
+
+--컬럼 값 붙여서 새로운 컬럼 만들어주기
+SELECT LAST_NAME || ' is a ' ||job_id AS EXPLAIN FROM EMPLOYEES;
+
+--NULL 값인 애들
+SELECT * FROM EMPLOYEES
+WHERE commission_pct IS NULL;
+
+--NULL 값이 아닌 애들
+SELECT * FROM EMPLOYEES
+WHERE commission_pct IS NOT NULL;
+
+--Q.EMPLOYEES 테이블에서 COMMISSION_PCT NULL값 개수를 출력
+SELECT COUNT(*)-COUNT(COMMISSION_PCT) NULL개수
+FROM EMPLOYEES;
+
+--Q.EMPLOYEES 테이블에서 EMPLOYEE_ID가 홀수인 것만 출력
+SELECT * FROM EMPLOYEES
+WHERE MOD(EMPLOYEE_ID,2)=1;
+
+--TRUNC : 버림
+SELECT LAST_NAME, TRUNC(SALARY/12,2) 월급
+FROM EMPLOYEES;
+
+--WIDTH_BUCKET(지정값, 최소값, 최대값, BUCKET개수)
+--0~100을 10으로 나눴을 때 지정값의 범주
+SELECT WIDTH_BUCKET(92,0,100,10) FROM DUAL;
+SELECT WIDTH_BUCKET(30,0,100,3) FROM DUAL;
+
+SELECT UPPER('Hello World') FROM DUAL;
+SELECT LOWER('Hello World') FROM DUAL;
+
+SELECT LAST_NAME,SALARY 
+FROM EMPLOYEES
+WHERE LAST_NAME='king';
+
+SELECT LAST_NAME,SALARY 
+FROM EMPLOYEES
+WHERE LOWER(LAST_NAME)='king';
+
+SELECT JOB_ID,LENGTH(JOB_ID) FROM EMPLOYEES;
+SELECT SUBSTR('Hello World',3,3) FROM DUAL;
+SELECT SUBSTR('Hello World',-3,3) FROM DUAL;
+
+--LPAD 비어있는 자릿수 왼쪽부터 채우기
+SELECT LPAD('Hello World',20,'#') FROM DUAL;
+
+--RPAD 비어있는 자릿수 오른쪽부터 채우기
+SELECT RPAD('Hello World',20,'#') FROM DUAL;
+
+SELECT LAST_NAME, TRIM('A' FROM LAST_NAME) A삭제 FROM EMPLOYEES;
+
+SELECT LTRIM('aaaHello Worldaaa','a') FROM DUAL;
+SELECT RTRIM('aaaHello Worldaaa','a') FROM DUAL;
+SELECT TRIM(' Hello World ') FROM DUAL;
+SELECT LTRIM(' Hello World ') FROM DUAL;
+SELECT RTRIM(' Hello World ') FROM DUAL;
+
+SELECT SYSDATE FROM DUAL;
+
+SELECT * FROM EMPLOYEES;
+
+--근속년수 구하기
+SELECT LAST_NAME, TRUNC((SYSDATE-HIRE_DATE)/365,0) 근속년수
+FROM EMPLOYEES;
+
+--과제_1005_1. EMPLOYEES 테이블에서 채용일에 6개월을 추가한 날짜를 LAST_NAME과 같이 출력
+--과제_1005_2. 이번달의 말일을 반환하는 함수를 사용하여 말일을 출력
+--과제_1005_3. EMPLOYEES 테이블에서 채용일과 현재시점간의 근속월수를 출력
+--과제_1005_4. 입사일 6개월 후 첫번째 월요일을 LAST_NAME별로 출력
+--과제_1005_5. JOB_ID별로 연봉합계 연봉평균 최고연봉 최저연봉 출력, 단 평균연봉이 5000 이상인 경우만 포함하여 내림차순으로 정렬
