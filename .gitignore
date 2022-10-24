@@ -7,3 +7,5 @@ LMNOP/
 수업/m8_머신러닝 응용/sample_submission_stg2.csv.zip
 수업/m8_머신러닝 응용/test_stg2.tsv.zip
 *.tsv
+수업/m8_머신러닝 응용/tmdb_5000_movies.csv
+수업/m8_머신러닝 응용/tmdb_5000_credits.csv
